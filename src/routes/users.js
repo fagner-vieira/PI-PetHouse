@@ -17,8 +17,8 @@ router.get("/checkout", (req, res) => {
 router.get("/meuCarrinho", (req, res) => {
   res.render("pages/meuCarrinho");
 });
-router.get("/produtoInterna", (req, res) => {
-  res.render("pages/produtoInterna");
+router.get("/produtoInterno", (req, res) => {
+  res.render("pages/produtoInterno");
 });
 router.get("/minhaConta", (req, res) => {
   res.render("pages/minhaConta");
