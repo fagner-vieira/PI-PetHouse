@@ -30,7 +30,7 @@
                         <input type="text" name="email" id="email" placeholder="Digite seu email" required />
                         <input type="password" name="senha" placeholder="Digite sua senha" required />
                         <input type="password" name="confirma_senha" placeholder="Confirme a senha" required />
-                        <% if(msg) { %>
+                        <% if (typeof msg !="undefined" ) { %>
                             <p>
                                 <label style="color:Red">
                                     <%= msg %>
@@ -60,7 +60,14 @@
                         <form action="/cadastro" method="post">
                             <input name="email" type="text" placeholder=" Digite seu E-mail" required>
                             <input name="senha" type="password" placeholder=" Digite sua senha" required>
-                            <button type="submit" id="SubmitButton" class="btn">Entrar</button>
+                            <% if (typeof (msgLogin)!="undefined" ) { %>
+                                <p>
+                                    <label style="color:Red">
+                                        <%= msgLogin %>
+                                    </label>
+                                </p>
+                                <%}%>
+                                    <button type="submit" id="SubmitButton" class="btn">Entrar</button>
                         </form>
                 </div>
                 <div class="links">

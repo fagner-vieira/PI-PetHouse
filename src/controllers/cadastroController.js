@@ -15,22 +15,22 @@ const cadastroController = {
         message: ".",
       });
     }
-    if (!nome_cliente) {
-      return res.status(422).json({ message: "Nome é obrigatorio!" });
-    }
-    if (!email) {
-      return res.status(422).json({ message: "Email é obrigatório" });
-    }
-    if (!senha) {
-      return res.status(422).json({ message: "Senha é obrigatório!" });
-    }
+    // if (!nome_cliente) {
+    //   return res.status(422).json({ message: "Nome é obrigatorio!" });
+    // }
+    // if (!email) {
+    //   return res.status(422).json({ message: "Email é obrigatório" });
+    // }
+    // if (!senha) {
+    //   return res.status(422).json({ message: "Senha é obrigatório!" });
+    // }
     if (senha.length < 6) {
-      return res
-        .status(422)
-        .json({ message: "Senha deve ter pelo menos 6 caracteres!" });
+      return res.render("pages/login", {
+        msg: "Senha deve ter pelo menos 6 caracteres!",
+      });
     }
     if (senha !== confirma_senha) {
-      return res.render("login", { msg: AAAAAAAAAAAAAAAAAA });
+      return res.render("pages/login", { msg: "as senhas devem ser igual" });
     }
 
     const salt = await bcrypt.genSalt(12);
@@ -65,19 +65,24 @@ const cadastroController = {
     const user = await cliente.findOne({ where: { email: email } });
 
     if (!user) {
-      return res.status(422).json({ msg: "Usuario Não encontrado" });
+      return res.render("pages/login", {
+        msgLogin: "Usuario ou senha incorreto!",
+      });
     }
 
-    try {
-      if (bcrypt.compareSync(senha, user.senha)) {
-        console.log("kkkk", user.senha);
-        return res.status(200).json({ msg: "usuario encontrado" });
-      }
-    } catch (err) {
-      res.json(err);
-      req.session.emailUsuario = user.email;
-      res.redirect("/");
+    // try {
+    if (!bcrypt.compareSync(senha, user.senha)) {
+      res.render("pages/login", {
+        msgLogin: "Usuario ou senha incorretos!",
+      });
+      return;
     }
+    //   return;
+    // } catch (error) {
+    //   res.json(error);
+    // }
+    req.session.emailUsuario = user.email;
+    res.redirect("/");
   },
 };
 
