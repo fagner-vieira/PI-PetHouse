@@ -23,72 +23,55 @@
                 <h1>Cadastrar</h1>
 
                 <div class="Form">
-                    <% if (alert==true) { %>
-                        aaaaaa
-                        <% } %>
 
-                            <form action="/cadastro" method="post">
-                                <input type="text" name="nome_cliente" id='name' placeholder="Digite seu nome " />
-                                <input type="text" name="email" id="email" placeholder="Digite seu email" />
-                                <input type="password" name="senha" placeholder="Digite sua senha" />
-                                <!-- <input type="password" name="senha" placeholder="Confirme a senha"> -->
+
+                    <form action="/cadastro" method="post">
+                        <input type="text" name="nome_cliente" id='name' placeholder="Digite seu nome " required />
+                        <input type="text" name="email" id="email" placeholder="Digite seu email" required />
+                        <input type="password" name="senha" placeholder="Digite sua senha" required />
+                        <input type="password" name="confirma_senha" placeholder="Confirme a senha" required />
+                        <% if(msg) { %>
+                            <p>
+                                <label style="color:Red">
+                                    <%= msg %>
+                                </label>
+                            </p>
+                            <%}%>
                                 <button type="submit" id="SubmitButton" class="btn">Cadastrar</button>
-                            </form>
-                            <div class="social">
-                                <button class="facebook btn">
-                                    <img src="./imagens/facebook-f-brands.svg" style="width: 10px;"><a
-                                        href="https://www.facebook.com/">Entrar com Facebook</a>
-                                </button>
-                                <button class="google btn">
-                                    <img src="./imagens/google-brands.svg" style="width: 15px;"><a
-                                        href="https://www.Google.com/">Entrar
-                                        com Google</a>
-                                </button>
-                            </div>
+                    </form>
+                    <div class="social">
+                        <button class="facebook btn">
+                            <img src="./imagens/facebook-f-brands.svg" style="width: 10px;"><a
+                                href="https://www.facebook.com/">Entrar com Facebook</a>
+                        </button>
+                        <button class="google btn">
+                            <img src="./imagens/google-brands.svg" style="width: 15px;"><a
+                                href="https://www.Google.com/">Entrar
+                                com Google</a>
+                        </button>
+                    </div>
                 </div>
             </section>
             <section class="login">
                 <h1>Entrar</h1>
 
                 <div class="Form">
-                    <input name="email_login" type="text" placeholder=" Digite seu E-mail">
-                    <input name="senha_login" type="password" placeholder=" Digite sua senha">
+                    <form class="Form" action="/login" method="post">
+                        <form action="/cadastro" method="post">
+                            <input name="email" type="text" placeholder=" Digite seu E-mail" required>
+                            <input name="senha" type="password" placeholder=" Digite sua senha" required>
+                            <button type="submit" id="SubmitButton" class="btn">Entrar</button>
+                        </form>
                 </div>
                 <div class="links">
 
                     <a href="#">Esqueceu sua senha?</a>
 
                 </div>
-                <button class="btn">Entrar</button>
             </section>
         </div>
     </div>
 
 </body>
-
-
-<!-- <script>
-    // const button = document.getElementById("SubmitButton")
-    // button.addEventListener("click", submit)
-    // const body = {
-    //     "nome_cliente": "msasarcos",
-    //     "nome_social": "casassaca",
-    //     "telefone": "12344",
-    //     "email": "marcola@gamail.com",
-    //     "senha": "senhssa"
-    // }
-    // const rota = "http://localhost:3000/cadastro"
-    // function submit() {
-    //     fetch(rota, {
-    //         headers: {
-    //             "Content-Type": "Application/json"
-    //         },
-
-    //         body: JSON.stringify(body),
-    //         method: "POST"
-    //     })
-    // }
-
-</script> -->
 
 </html>

@@ -1,7 +1,0 @@
-const express = require("express");
-const router = express.Router();
-const clienteController = require("../controllers/loginController");
-
-router.get("/cliente", clienteController.index);
-
-module.exports = router;

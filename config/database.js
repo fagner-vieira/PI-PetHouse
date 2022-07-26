@@ -1,10 +1,10 @@
 const config = {
-    username: 'root',
-    password:'',
-    database:'mydb_PI',
-    host:'localhost',
-    dialect: 'mysql',
-    operatorsAliases: 'false'
+  username: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_DATABASE,
+  host: process.env.DB_HOST,
+  dialect: process.env.DB_DIALECT,
+  operatorsAliases: "false",
 };
 
-module.exports = config;  
+module.exports = config;
