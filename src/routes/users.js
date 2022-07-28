@@ -23,6 +23,11 @@ router.get("/minhaConta", AutenticacaoAdmin, (req, res) => {
 router.get("/finalizado", AutenticacaoAdmin, (req, res) => {
   res.render("pages/pedidoFinalizado");
 });
+
+router.get("/loginAdmin",  (req, res) => {
+  res.render("pages/loginAdmin");
+});
+
 router.post("/login", cadastroController.authlogin);
 router.get("/login", cadastroController.login);
 // // router.post("/admin", validation, createUser.index);
