@@ -9,4 +9,6 @@ routes.get("/", indexController.exibirHome);
 
 routes.get("/home", indexController.redirectHome);
 
+
+
 module.exports = routes;
