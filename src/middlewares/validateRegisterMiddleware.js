@@ -1,4 +1,4 @@
-function AutenticacaoAdmin(req, res, next) {
+function AutenticacaoUsers(req, res, next) {
   if ("emailUsuario" in req.session) {
     next();
   } else {
@@ -6,4 +6,4 @@ function AutenticacaoAdmin(req, res, next) {
   }
 }
 
-module.exports = AutenticacaoAdmin;
+module.exports = AutenticacaoUsers;
