@@ -44,6 +44,7 @@ h1 {
   display: flex;
   justify-content: center;
   align-items: center;
+  background-color: rgba(220, 220, 220, 0.452);
 }
 
 .box {
@@ -51,9 +52,9 @@ h1 {
   height: fit-content;
   width: 49.063rem;
   /* Border radius para corrigir sombreamento */
-  border-radius: 0.75rem;
+  /*border-radius: 0.75rem;
   /* Sombreamento */
-  box-shadow: 012px 12px 17px 4px rgba(0, 0, 0, 0.42);
+  box-shadow: 012px 12px 17px 4px rgba(0, 0, 0, 0.979);
 }
 
 button {
@@ -86,11 +87,13 @@ button:hover {
 
 
 .login {
-  width: 40%;
+  width: 60%;
   background-color: #739a4b;
-  /* Definimos bordas da direita */
+  /* Definimos bordas da direita & esquerda \o/ */
   border-top-right-radius: 0.75rem;
   border-bottom-right-radius: 0.75rem;
+  border-top-left-radius: 0.75rem;
+  border-bottom-left-radius: 0.75rem;
   padding: 3rem 2rem;
   display: flex;
   /* Com o direction como column, o align items vira horizontal e o justify vertical */
