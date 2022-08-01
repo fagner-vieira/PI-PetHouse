@@ -3,6 +3,7 @@ var router = express.Router();
 const AutenticacaoUsers = require("../middlewares/validateRegisterMiddleware");
 const AutenticacaoAdmin = require("../middlewares/validateRegisterMiddlewareAdmin");
 const cadastroController = require("../controllers/cadastroController");
+const cadastroAdminController = require("../controllers/cadastroAdminController");
 
 router.use(express.json());
 router.get("/", (req, res) => {
@@ -25,11 +26,11 @@ router.get("/finalizado", AutenticacaoUsers, (req, res) => {
   res.render("pages/pedidoFinalizado");
 });
 
-router.get("/loginAdmin",  (req, res) => {
+router.get("/loginAdmin", (req, res) => {
   res.render("pages/loginAdmin");
 });
 
-router.get("/produtosCadastrar",  (req, res) => {
+router.get("/produtosCadastrar", (req, res) => {
   res.render("pages/produtosCadastrar");
 });
 
@@ -39,5 +40,8 @@ router.get("/login", cadastroController.login);
 router.get("/");
 
 router.post("/cadastro", cadastroController.create);
+
+router.post("/cadastroAdmin", cadastroAdminController.create);
+router.post("/loginAdmin", cadastroAdminController.authlogin);
 
 module.exports = router;

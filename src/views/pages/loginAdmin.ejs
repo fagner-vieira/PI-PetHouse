@@ -11,35 +11,61 @@
 </head>
 
 <body>
-   
+
     <div class="container">
-    
-            <section class="login">
-                <h1>Login Administrador</h1>
-                <h4> <center>Área restrita para pessoas cadastradas</center> </h4>
 
-                <div class="Form">
-                    <form class="Form" action="/login" method="post">
-                        <form action="/cadastro" method="post">
-                            <input name="email" type="text" placeholder=" Digite seu E-mail" required>
-                            <input name="senha" type="password" placeholder=" Digite sua senha" required>
-                            <% if (typeof (msgLogin)!="undefined" ) { %>
-                                <p>
-                                    <label style="color:Red">
-                                        <%= msgLogin %>
-                                    </label>
-                                </p>
-                                <%}%>
-                                    <button type="submit" id="SubmitButton" class="btn">Entrar</button>
-                        </form>
-                </div>
-                <div class="links">
+        <section class="login">
+            <h1>Cadastrar Administrador</h1>
 
-                    <a href="#">Esqueceu sua senha?</a>
 
-                </div>
-            </section>
-        </div>
+            <form action="/cadastroAdmin" method="post">
+                <input type="text" name="nome" id='name' placeholder="Digite seu nome " required />
+                <input type="text" name="email" id="email" placeholder="Digite seu email" required />
+                <input name="funcao" type="text" placeholder=" Digite seu cargo" required>
+                <input type="password" name="senha" placeholder="Digite sua senha" required />
+                <input type="password" name="confirma_senha" placeholder="Confirme a senha" required />
+                <% if (typeof msg !="undefined" ) { %>
+                    <p>
+                        <label style="color:Red">
+                            <%= msg %>
+                        </label>
+                    </p>
+                    <%}%>
+                        <button type="submit" id="SubmitButton" class="btn">Cadastrar</button>
+            </form>
+
+            <h1>Login Administrador</h1>
+            <h4>
+                <center>Área restrita para pessoas cadastradas</center>
+            </h4>
+
+
+            <div class="Form">
+                <form class="Form" action="/loginAdmin" method="post">
+
+                    <input name="email" type="text" placeholder=" Digite seu E-mail" required>
+                    <input name="senha" type="password" placeholder=" Digite sua senha" required>
+                    <% if (typeof (msgLogin)!="undefined" ) { %>
+                        <p>
+                            <label style="color:Red">
+                                <%= msgLogin %>
+                            </label>
+                        </p>
+                        <%}%>
+                            <button type="submit" id="SubmitButton" class="btn">Entrar</button>
+                </form>
+            </div>
+            <div class="links">
+
+                <a href="#">Esqueceu sua senha?</a>
+
+            </div>
+
+
+        </section>
+
+
+    </div>
     </div>
 
 </body>

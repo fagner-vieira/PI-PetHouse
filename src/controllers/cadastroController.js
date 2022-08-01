@@ -15,15 +15,6 @@ const cadastroController = {
         message: ".",
       });
     }
-    // if (!nome_cliente) {
-    //   return res.status(422).json({ message: "Nome é obrigatorio!" });
-    // }
-    // if (!email) {
-    //   return res.status(422).json({ message: "Email é obrigatório" });
-    // }
-    // if (!senha) {
-    //   return res.status(422).json({ message: "Senha é obrigatório!" });
-    // }
     if (senha.length < 6) {
       return res.render("pages/login", {
         msg: "Senha deve ter pelo menos 6 caracteres!",
@@ -77,10 +68,6 @@ const cadastroController = {
       });
       return;
     }
-    //   return;
-    // } catch (error) {
-    //   res.json(error);
-    // }
     req.session.emailUsuario = user.email;
     res.redirect("/");
   },
