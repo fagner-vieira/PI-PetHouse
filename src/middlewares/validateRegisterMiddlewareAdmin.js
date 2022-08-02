@@ -1,6 +1,6 @@
 function AutenticacaoAdmin(req, res, next) {
   if ("emailAdmin" in req.session) {
-    next("/produtosCadastrar");
+    next();
   } else {
     res.redirect("/loginAdmin");
   }

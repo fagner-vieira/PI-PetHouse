@@ -39,8 +39,6 @@ router.get("/login", cadastroController.login);
 // // router.post("/admin", validation, createUser.index);
 router.get("/");
 
-router.post("/cadastro", cadastroController.create);
-
 router.post("/cadastroAdmin", cadastroAdminController.create);
 router.post("/loginAdmin", cadastroAdminController.authlogin);
 
