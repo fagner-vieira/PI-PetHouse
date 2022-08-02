@@ -1,19 +1,19 @@
 const Sequelize = require("sequelize");
 
 //criando conexão com o banco de dados
-const sequelize = new Sequelize("mydb_PI", "root", "", {
+const sequelize = new Sequelize("animal-e-pi", "root", "Senha123", {
   host: "localhost",
-  dialect: "mysql",
+  dialect: "mysql"
 });
 
 //função esta verificando se a conexão com o banco esta sendo executada!
 sequelize
   .authenticate()
   .then(() => {
-    console.log("sucess");
+    console.log("Conexão no banco realizado com sucesso!");
   })
-  .catch(() => {
-    console.log("error");
+  .catch((erro) => {
+    console.log("error", erro);
   });
 
 module.exports = sequelize;
