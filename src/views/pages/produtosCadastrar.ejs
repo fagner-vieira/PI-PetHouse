@@ -1,11 +1,12 @@
-"<%- include('../partials/header') %>
+<<<<<<< HEAD "<%- include('../partials/header') %>
 
     <h1>
         <center>Painel Administrativo</center>
     </h1>
     </br>
     <h3><u>Cadastrar novo item</u></h3>
-    <form action="/admin/servicos/acaoCadastrar" enctype="multipart/form-data" method="POST" class="cadastrar"></form>
+    <form action=" /admin/servicos/acaoCadastrar" enctype="multipart/form-data" method="POST" class="cadastrar">
+    </form>
 
     <label>Nome:</label>
     <input type="text" name="nome" />
@@ -55,6 +56,125 @@
 
     </form>
 
+    <%- include('../partials/header') %>
+        <div class="container-fluid">
+            <div class="container">
+                <div class="row justify-content-md-center">
+                    <div class="col-12">
+                        <h1 class="text-center">
+                            Painel Administrativo
+                        </h1>
+                    </div>
+                </div>
 
+                <div class="row justify-content-md-center">
+                    <div class="col-12 text-center">
+                        <h3><u>Cadastrar novo item</u></h3>
+                    </div>
 
-    <%- include('../partials/footer') %>
+                    <form action="/admin/servicos/acaoCadastrar" enctype="multipart/form-data" method="POST"
+                        class="cadastrar">
+                        <div class="row justify-content-md-center">
+
+                            <div class=" col-6 mb-3">
+                                <div class="form-floating col-12 mb-3">
+                                    <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Nome">
+                                    <label for="floatingInputGroup1">Nome</label>
+                                </div>
+                                <div class="form-floating col-12 mb-3">
+                                    <input type="text" class="form-control" id="floatingInputGroup1"
+                                        placeholder="Preço">
+                                    <label for="floatingInputGroup1">Preço</label>
+                                </div>
+                                <div class="form-floating col-12 mb-3">
+                                    <textarea class="form-control" placeholder="Descrição"
+                                        id="floatingTextarea"></textarea>
+                                    <label for="floatingTextarea">Descrição</label>
+                                </div>
+                                <div class="form-floating col-12">
+                                    <label class="form-label ml-0 pl-0">Foto do Produto:</label><br><br>
+                                    <input type="file" name="imagemProduto" />
+                                </div>
+
+                                <div class="form-floating text-center mt-3">
+                                    <button class="btn btn-primary" type="submit">Cadastrar</button>
+                                </div>
+                            </div>
+                        </div>
+                    </form>
+
+                    <hr>
+
+                    <div class="row justify-content-md-center">
+                        <div class="col-12 text-center">
+                            <h3><u>Alterar item</u></h3>
+                        </div>
+
+                        <form action="/admin/servicos/acaoAlterar" enctype="multipart/form-data" method="PATCH"
+                            class="alterar">
+                            <div class="row justify-content-md-center">
+
+                                <div class=" col-6 mb-3">
+                                    <div class="form-floating col-12 mb-3">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Produto:</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+
+                                    <div class="form-floating col-12 mb-3">
+                                        <input type="text" class="form-control" id="floatingInputGroup1"
+                                            placeholder="Preço">
+                                        <label for="floatingInputGroup1">Preço</label>
+                                    </div>
+                                    <div class="form-floating col-12 mb-3">
+                                        <textarea class="form-control" placeholder="Descrição"
+                                            id="floatingTextarea"></textarea>
+                                        <label for="floatingTextarea">Descrição</label>
+                                    </div>
+                                    >>>>>>> 0ceb0f66821f7fc6d157e004bbde98009d149f5f
+
+                                    <div class="form-floating text-center mt-3">
+                                        <button class="btn btn-primary" type="submit">Alterar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                    </div>
+
+                    <hr>
+
+                    <<<<<<< HEAD=======<div class="row justify-content-md-center">
+                        <div class="col-12 text-center">
+                            <h3><u>Excluir item</u></h3>
+                        </div>
+
+                        <form action="/admin/servicos/acaoDelete" enctype="multipart/form-data" method="DELETE"
+                            class="deletar">
+                            <div class="row justify-content-md-center">
+
+                                <div class=" col-6 mb-3">
+                                    <div class="form-floating col-12 mb-3">
+                                        <select class="form-select" aria-label="Default select example">
+                                            <option selected>Produto:</option>
+                                            <option value="1">One</option>
+                                            <option value="2">Two</option>
+                                            <option value="3">Three</option>
+                                        </select>
+                                    </div>
+
+                                    <p>Este produto será excluido permanentemente!</p>
+                                    <div class="form-floating text-center mt-3">
+                                        <button class="btn btn-primary" type="submit">Deletar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </form>
+                </div>
+            </div>
+        </div>
+        </div>
+        >>>>>>> 0ceb0f66821f7fc6d157e004bbde98009d149f5f
+        <%- include('../partials/footer') %>
