@@ -2,7 +2,7 @@ module.exports = {
   "development": {
     "username": "root",
     "password": "",
-    "database": "happyPet", 
+    "database": "mydb_pi", 
     "host": "127.0.0.1",
     "dialect": "mysql"
   },
