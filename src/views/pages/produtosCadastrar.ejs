@@ -1,7 +1,8 @@
 <%- include('../partials/header') %>
 
-<h1>Painel Administrativo</h1>
-
+          <h1><center>Painel Administrativo</center></h1>
+</br>
+             <h3><u>Cadastrar novo item</u></h3>
 <form action="/admin/servicos/acaoCadastrar" enctype="multipart/form-data" method="POST" class="cadastrar"></form>
     
    <label>Nome:</label>
@@ -12,9 +13,46 @@
 
     <label>Descriçao</label>
     <textarea name="Descricao"></textarea>
+</br>
+</br>
+    <label>Foto do Produto:</label>
+    <input type="file" name="imagemProduto" /> </div>
+</br>
 
     <button>Cadastrar</button>
+</br>
+</form> 
+</br>
+            <h3><u>Alterar item</u></h3>
+
+<form action="/admin/servicos/acaoAlterar" enctype="multipart/form-data" method="PATCH" class="alterar"></form>
+    
+   <label>Nome: </label>
+    <input type="text" name="nome"/>
+
+    <label>Preço:</label>
+    <input type="text" name="preço"/>
+
+    <label>Descrição</label>
+    <textarea name="Descricao"></textarea>
+</br>
+
+    <button>Alterar</button>
+</br>
+</form> 
+</br>
+                <h3><u> Excluir item</u></h3>
+<form action="/admin/servicos/acaoDelete" enctype="multipart/form-data" method="DELETE" class="deletar"></form>
+</br>    
+   <label>Produto:</label>
+    <input type="text" name="nome"/>
+</br>
+    <label>Este produto será excluido permanentemente!</label>
+</br>
+    <button>Deletar</button>
 
 </form> 
+
+
 
 <%- include('../partials/footer') %>
