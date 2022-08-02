@@ -6,11 +6,11 @@ var userRoutes = require("./routes/users");
 var app = express();
 var session = require("express-session");
 
-require("../config/database");
+
 const bodyParser = require("body-parser");
 
 //inicio banco de dados - processo de mvc - //
-
+const db = require("../models/db")
 const produtosRoutes = require("./routes/produtosRoutes");
 const pedidoRoutes = require("./routes/pedidoRoutes");
 const enderecosRoutes = require("./routes/enderecosRoutes");
