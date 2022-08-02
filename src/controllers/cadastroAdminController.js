@@ -10,6 +10,12 @@ const cadastroAdminController = {
   create: async (req, res) => {
     const { nome, email, senha, confirma_senha, funcao } = req.body;
 
+    if (!email.includes("@PetHouse.com")) {
+      return res.render("pages/loginAdmin", {
+        msg: "Voce não tem permissão para cadastrar!",
+      });
+    }
+
     if (await adminSchema.findOne({ where: { email: email } })) {
       return res.render("pages/loginAdmin", {
         message: ".",
@@ -44,7 +50,6 @@ const cadastroAdminController = {
   },
 
   //login do Admin
-
   authlogin: async (req, res) => {
     const { email, senha } = req.body;
 
@@ -55,28 +60,24 @@ const cadastroAdminController = {
       return res.status(422).json({ message: "Senha é obrigatório!" });
     }
 
-    //verificando se o email do admin existe
-    const admin = await adminSchema.findOne({ where: { email: email } });
-    console.log(admin);
-    if (!admin) {
+    //verificando se o email do usuario existe
+    const user = await adminSchema.findOne({ where: { email: email } });
+
+    if (!user) {
       return res.render("pages/loginAdmin", {
         msgLogin: "Usuario ou senha incorreto!",
       });
     }
 
     // try {
-    if (!bcrypt.compareSync(senha, admin.senha)) {
+    if (!bcrypt.compareSync(senha, user.senha)) {
       res.render("pages/loginAdmin", {
         msgLogin: "Usuario ou senha incorretos!",
       });
       return;
     }
-    //   return;
-    // } catch (error) {
-    //   res.json(error);
-    // }
-    req.session.emailUsuario = admin.email;
-    res.redirect("/");
+    req.session.emailAdmin = user.email;
+    res.render("pages/produtoInterna");
   },
 };
 
