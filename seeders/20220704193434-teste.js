@@ -1,24 +1,19 @@
 'use strict';
 
+const bcrypt = require("bcryptjs");
+
 module.exports = {
   async up (queryInterface, Sequelize) {
-    /**
-     * Add seed commands here.
-     *
-     * Example:
-     * await queryInterface.bulkInsert('People', [{
-     *   name: 'John Doe',
-     *   isBetaMember: false
-     * }], {});
-    */
+    const senhaPadrao = bcrypt.hashSync("123456");
+     await queryInterface.bulkInsert('administrador', [{
+        nome: 'Usuário admin',
+        email: 'admin@pethouse.com',
+        senha: senhaPadrao
+      }], {});
   },
 
   async down (queryInterface, Sequelize) {
-    /**
-     * Add commands to revert seed here.
-     *
-     * Example:
-     * await queryInterface.bulkDelete('People', null, {});
-     */
+     await queryInterface.bulkDelete('admin', null, {});
   }
 };
+  
