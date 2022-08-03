@@ -19,7 +19,7 @@ module.exports = {
           allowNull: false,
       },
       descricao:{
-         type: Sequelize.STRING
+         type: Sequelize.TEXT
       },
       imagem:{
           type: Sequelize.STRING
