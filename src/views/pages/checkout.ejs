@@ -38,7 +38,7 @@
         </div>
         <div class="col-md-7 col-lg-8">
           <h4 class="mb-3">Endereço de Cobrança</h4>
-          <form class="needs-validation" novalidate="">
+          <form class="needs-validation" novalidate="" method="get">
             <div class="row g-3">
               <div class="col-sm-6">
                 <label for="firstName" class="form-label">Nome</label>
@@ -63,74 +63,50 @@
                 </div>
               </div>
 
+              <div class="col-md-3">
+                <label for="cep" class="form-label">CEP</label>
+                <input type="text" class="form-control" id="cep" placeholder="000-00000" required=""
+                  onblur="pesquisacep(this.value);">
+                <div class="invalid-feedback">
+                  Informe um CEP válido.
+                </div>
+              </div>
+              <div class="col-md-4">
+                <label for="state" class="form-label">Cidade</label>
+                <input type="text" class="form-control" id="cidade" placeholder="Cidade" required="">
+                <div class="invalid-feedback">
+                  Por favor, informe um estado.
+                </div>
+              </div>
+              
+              <div class="col-md-4">
+                <label for="state" class="form-label">UF</label>
+                <input type="text" class="form-control" id="uf" placeholder="UF" required="">
+                <div class="invalid-feedback">
+                  Por favor, informe um estado.
+                </div>
+              </div>
+
               <div class="col-12">
                 <label for="address" class="form-label">Endereço</label>
-                <input type="text" class="form-control" id="address" placeholder="Rua 123" required="">
+                <input type="text" class="form-control" id="rua" placeholder="Rua" required="">
                 <div class="invalid-feedback">
                   Por favor, informe seu endereço para envio.
                 </div>
               </div>
 
               <div class="col-12">
-                <label for="address2" class="form-label">Endereço adicional <span
+                <label for="address" class="form-label">Número</label>
+                <input type="text" class="form-control" id="numero" placeholder="123" required="">
+                <div class="invalid-feedback">
+                  Por favor, informe seu endereço para envio.
+                </div>
+              </div>
+
+              <div class="col-12">
+                <label for="address2" class="form-label">Bairro<span
                     class="text-muted">(Opcional)</span></label>
-                <input type="text" class="form-control" id="address2" placeholder="Apto 505">
-              </div>
-
-              <div class="col-md-5">
-                <label for="country" class="form-label">País</label>
-                <select class="form-select" id="country" required="">
-                  <option value="">Escolha...</option>
-                  <option>Brasil</option>
-                </select>
-                <div class="invalid-feedback">
-                  Selecione um país.
-                </div>
-              </div>
-
-              <div class="col-md-4">
-                <label for="state" class="form-label">Estado</label>
-                <select class="form-select" id="state" required="">
-                  <option value="">Escolha...</option>
-                  <option>Acre</option>
-                  <option>Alagoas</option>
-                  <option>Amapá</option>
-                  <option>Amazonas</option>
-                  <option>Bahia</option>
-                  <option>Ceara</option>
-                  <option>Distrito Federal</option>
-                  <option>Espírito Santo</option>
-                  <option>Goiás</option>
-                  <option>Maranhão</option>
-                  <option>Mato Grosso</option>
-                  <option>Mato Grosso do Sul</option>
-                  <option>Minas Gerais</option>
-                  <option>Pará</option>
-                  <option>Paraíba</option>
-                  <option>Paraná</option>
-                  <option>Pernambuco</option>
-                  <option>Piauí</option>
-                  <option>Rio de Janeiro</option>
-                  <option>Rio Grande do Norte</option>
-                  <option>Rio Grande do Sul</option>
-                  <option>Rondônia</option>
-                  <option>Roraima</option>
-                  <option>Santa Catarina</option>
-                  <option>São Paulo</option>
-                  <option>Sergipe</option>
-                  <option>Tocantins</option>
-                </select>
-                <div class="invalid-feedback">
-                  Por favor, informe um estado.
-                </div>
-              </div>
-
-              <div class="col-md-3">
-                <label for="zip" class="form-label">CEP</label>
-                <input type="text" class="form-control" id="zip" placeholder="000-00000" required="">
-                <div class="invalid-feedback">
-                  Informe um CEP válido.
-                </div>
+                <input type="text" class="form-control" id="bairro" placeholder="Apto 505">
               </div>
             </div>
 
