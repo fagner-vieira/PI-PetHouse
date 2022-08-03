@@ -77,7 +77,7 @@ const cadastroAdminController = {
       return;
     }
     req.session.emailAdmin = user.email;
-    res.render("pages/produtoInterna");
+    res.render("pages/produtosCadastrar");
   },
 };
 
