@@ -16,7 +16,7 @@ router.get("/checkout", AutenticacaoUsers, (req, res) => {
 router.get("/meuCarrinho", AutenticacaoUsers, (req, res) => {
   res.render("pages/meuCarrinho");
 });
-router.get("/produtoInterna", AutenticacaoAdmin, (req, res) => {
+router.get("/produtoInterna", (req, res) => {
   res.render("pages/produtoInterna");
 });
 router.get("/minhaConta", AutenticacaoUsers, (req, res) => {
