@@ -22,7 +22,7 @@ module.exports = (sequelize, DataTypes) => {
 
     {
       tableName: "produtos",
-      timestamp: true,
+      timestamps: true,
     };
 
  Produtos.associate = (listaDeModels) => {

@@ -1,14 +1,16 @@
-const sequelize = require("../../models/db");
-const DataTypes = require("sequelize");
-const { Result } = require("express-validator");
-const Produtos = require("../../models/Produtos")(sequelize, DataTypes);
+const db = require('../../models/Produtos')
 
 const produtosController = {
-  index: async (req, res) => {
-    const produtos = await Produtos.findAll();
-    res.render.produtoInterna('produto',{produtos: Result});
-  },
+  getProdutos: function(req, res){
+    db.Produtos.findAll()
+      .then(function(produtosReturn) {
+        return res.render('listProdutos', {produtos: produtosReturn})
+      })
+      .catch((error) => console.log(error))
+
+  }
 };
+
 
 module.exports = produtosController;
 
