@@ -25,7 +25,7 @@ module.exports = {
 
   },
   senha: {
-      type: Sequelize.STRING(40),
+      type: Sequelize.STRING(100),
       allowNull: false
   },
   matricula_colaborador: {

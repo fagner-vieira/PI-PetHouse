@@ -30,6 +30,14 @@ module.exports = {
         allowNull: false,
        },
        complemento: Sequelize.STRING,
+       createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+         },
+        updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
       })
      
   },

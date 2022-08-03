@@ -23,7 +23,15 @@ module.exports = {
       },
       preco_venda:{
           type: Sequelize.FLOAT
-      }
+      },
+      createdAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+         },
+        updatedAt: {
+        allowNull: false,
+        type: Sequelize.DATE,
+      },
   })
 },
 

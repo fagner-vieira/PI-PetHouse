@@ -32,8 +32,8 @@ const cadastroAdminController = {
       });
     }
 
-    const salt = await bcrypt.genSalt(12);
-    const senhaHash = await bcrypt.hash(senha, salt);
+   
+    const senhaHash = await bcrypt.hash(senha);
 
     try {
       const user = await adminSchema.create({

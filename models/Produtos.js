@@ -1,5 +1,6 @@
 module.exports = (sequelize, DataTypes) => {
-    "Produtos",
+  const Produtos = sequelize.define(  
+  "Produtos",
     {
       id: {
         type: DataTypes.STRING,
@@ -23,7 +24,7 @@ module.exports = (sequelize, DataTypes) => {
     {
       tableName: "produtos",
       timestamp: true,
-    };
+    });
 
  Produtos.associate = (listaDeModels) => {
     Produtos.belongToMany(listaDeModels.Pedido, {
