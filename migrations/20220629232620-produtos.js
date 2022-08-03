@@ -10,19 +10,19 @@ module.exports = {
           autoIncrement: true,
           primaryKey: true
       },
-      racao: {
+      nome: {
           type: Sequelize.STRING,
           allowNull: false
       },
-      sabor_racao: {
-          type: Sequelize.STRING,
+      preco: {
+          type: Sequelize.FLOAT,
           allowNull: false,
       },
-      peso_pacote_racao:{
+      descricao:{
          type: Sequelize.STRING
       },
-      preco_venda:{
-          type: Sequelize.FLOAT
+      imagem:{
+          type: Sequelize.STRING
       },
       createdAt: {
         allowNull: false,
