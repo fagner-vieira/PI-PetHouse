@@ -4,24 +4,22 @@
 
     <h1 class="main-titulo">Conheça Nossos Produtos</h1>
 
+    
+    <div class="card-produto"> 
 
-    <div class="card-produto">
-      <% for (produto of produtos) { %>
       <div class="card" style="width: 18rem;">
         <img src="./imagens/racao-meat.png" class="card-img-top" alt="...">
         <div class="card-body">
-          <h5 class="card-title"><%= produto.racao%></h5>
+          <h5 class="card-title">Ração Vegana</h5>
           <p class="card-text">Refeição completa e balanceada.<br>
             Feito com carnes selecionadas que garantem saúde com muito sabor.<br>
             Alimento rico em ômegas 3 e 6 para pele e pelos mais saudáveis.<br>
             Com fibras e prebióticos que auxiliam na saúde intestinal.<br>
             Sem transgênicos, sem sal e sem corantes e aromas artificiais. <br>
             Conservado com antioxidantes naturais.</p>
-
-
-
         </div>
       </div>
+      <% } %>
 
       <div class="card" style="width: 18rem;">
         <img src="./imagens/racao-mix.png" class="card-img-top" alt="...">
@@ -52,7 +50,6 @@
         </div>
       </div>
     </div>
-    <% } %>
 
 
 
