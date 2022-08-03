@@ -9,20 +9,20 @@ router.use(express.json());
 router.get("/", (req, res) => {
   res.render("pages/home");
 });
-router.get("/checkout", (req, res) => {
+router.get("/checkout", AutenticacaoUsers, (req, res) => {
   res.render("pages/checkout");
 });
 
-router.get("/meuCarrinho", (req, res) => {
+router.get("/meuCarrinho", AutenticacaoUsers, (req, res) => {
   res.render("pages/meuCarrinho");
 });
 router.get("/produtoInterna", (req, res) => {
   res.render("pages/produtoInterna");
 });
-router.get("/minhaConta", (req, res) => {
+router.get("/minhaConta", AutenticacaoUsers, (req, res) => {
   res.render("pages/minhaConta");
 });
-router.get("/finalizado", (req, res) => {
+router.get("/finalizado", AutenticacaoUsers, (req, res) => {
   res.render("pages/pedidoFinalizado");
 });
 
