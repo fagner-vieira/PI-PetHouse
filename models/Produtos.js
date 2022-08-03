@@ -6,16 +6,16 @@ module.exports = (sequelize, DataTypes) => {
         type: DataTypes.STRING,
         primaryKey: true,
       },
-      racao: {
+      nome: {
         type: DataTypes.STRING,
       },
-      sabor_racao: {
-        type: DataTypes.STRING,
+      preco: {
+        type: DataTypes.FLOAT,
       },
-      peso_pacote_racao: {
-        type: DataTypes.STRING,
+      descricao: {
+        type: DataTypes.TEXT,
       },
-      peco_venda: {
+      imagem: {
         type: DataTypes.STRING,
       },
      
