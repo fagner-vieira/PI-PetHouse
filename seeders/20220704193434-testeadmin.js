@@ -8,7 +8,6 @@ module.exports = {
      await queryInterface.bulkInsert('administrador', [{
       nome: 'adminUsuário',
       funcao: "admin",
-      matricula_colaborador: "123456789",
       email: "admin@pethouse.com",
       senha: senhaPadrao,
       }], {});
