@@ -25,13 +25,23 @@ module.exports = {
 
   },
   senha: {
-      type: Sequelize.STRING(10),
+      type: Sequelize.STRING(40),
       allowNull: false
   },
   matricula_colaborador: {
       type: Sequelize.STRING(10),
       allowNull: false
-  } })
+  },
+  createdAt: {
+    allowNull: false,
+    type: Sequelize.DATE,
+     },
+    updatedAt: {
+    allowNull: false,
+    type: Sequelize.DATE,
+  },
+
+})
     
   },
 
