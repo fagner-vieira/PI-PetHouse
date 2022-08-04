@@ -29,7 +29,7 @@ app.use(session({ secret: "senha", resave: false, saveUninitialized: false }));
 
 // inicio banco de dados - processo de mvc - //
 
-app.use('/produtos', produtosRoutes);
+app.use('/produtoInterna', produtosRoutes);
 app.use(pedidoRoutes);
 app.use(enderecosRoutes);
 

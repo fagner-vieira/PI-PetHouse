@@ -1,10 +1,14 @@
-const db = require('../../models/Produtos')
+const sequelize = require("../../models/db");
+const DataTypes = require("sequelize");
+const produtosSchema = require("../../models/Produtos")(sequelize, DataTypes);
 
 const produtosController = {
   getProdutos: function(req, res){
-    db.produtos.findAll()
+    produtosSchema.findAll()
       .then(function(produtosReturn) {
-        return res.render('produtoInterna', {produtos: produtosReturn})
+        console.log(produtosReturn);
+        return res.render('/produtoInterna', {produtos: produtosReturn})
+        
       })
       .catch((error) => console.log(error))
 
