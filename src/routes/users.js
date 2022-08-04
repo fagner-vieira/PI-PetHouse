@@ -9,7 +9,11 @@ const AutenticacaoUsers = require("../middlewares/validateRegisterMiddleware");
 const AutenticacaoAdmin = require("../middlewares/validateRegisterMiddlewareAdmin");
 const cadastroController = require("../controllers/cadastroController");
 const cadastroAdminController = require("../controllers/cadastroAdminController");
+<<<<<<< HEAD
 const produtosController = require("../controllers/crudProdutosController");
+=======
+const { getProdutos } = require("../controllers/produtosController");
+>>>>>>> 41f6face92ccaa8bba4ca5d101544819021aa8ad
 
 router.use(express.json());
 router.get("/", (req, res) => {
@@ -22,8 +26,8 @@ router.get("/checkout", AutenticacaoUsers, (req, res) => {
 router.get("/meuCarrinho", AutenticacaoUsers, (req, res) => {
   res.render("pages/meuCarrinho");
 });
-router.get("/produtoInterna", (req, res) => {
-  res.render("pages/produtoInterna");
+router.get("/produtoInterna", getProdutos,(req, res) => {
+  res.render("/views/pages/produtoInterna");
 });
 router.get("/minhaConta", AutenticacaoUsers, (req, res) => {
   res.render("pages/minhaConta");

@@ -1,5 +1,5 @@
 module.exports = (sequelize, DataTypes) => {
-    const ProdutoHasPedido = sequelize.define("ProdutoHasPedido", {
+    const Carrinho = sequelize.define("Carrinho", {
     quantidade: DataTypes.NUMBER,
     
     created_at:DataTypes.DATE,
@@ -8,8 +8,8 @@ module.exports = (sequelize, DataTypes) => {
     fk_produtos: DataTypes.INTEGER,
     fk_pedido: DataTypes.INTEGER 
  }, {
-     tableName: 'ProdutosHasPedido',
+     tableName: 'Carrinho',
      timestamp: true
  })
-     return ProdutoHasPedido;
+     return Carrinho;
  };

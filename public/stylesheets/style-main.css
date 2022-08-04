@@ -1,100 +1,98 @@
 main {
   background-color: white;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  font-family     : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
 }
 
 .text-main {
-  display: block;
-  text-align: right;
-  padding-top: 20%;
+  display      : block;
+  text-align   : right;
+  padding-top  : 20%;
   padding-right: 10%;
-  margin: 2px;
-  font-size: 64pt;
-  font-weight: bolder;
-  color: #023c27;
+  margin       : 2px;
+  font-size    : 64pt;
+  font-weight  : bolder;
+  color        : #023c27;
 }
 
 .background-img {
-  height: 500px;
+  height          : 500px;
   background-image: url(../imagens/pexels-jodie-louise-805295.jpg);
-  background-size: 100%;
-  padding-bottom: 30%;
+  background-size : 100%;
+  padding-bottom  : 30%;
 }
 
-.produtos {
-  display: flex;
-  align-items: center;
-  flex-direction: row;
-  justify-content: space-around;
-  box-sizing: border-box;
-  font-weight: lighter;
-}
+.produtos {}
 
 .nossosProdutos {
-  padding-top: 10%;
+  padding-top   : 10%;
   padding-bottom: 5%;
-  text-align: center;
-  font-size: 60pt;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  text-align    : center;
+  font-size     : 60pt;
+  font-family   : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   font-weight: lighter;
 }
 
 #carrosel-tamanho {
-  width: 100%;
+  width     : 100%;
   box-shadow: 0px 1px 10px 2px grey;
 }
 
 .produto-01 {
-  width: 450px;
   text-align: center;
 }
 
+@media (max-width: 768px) {
+  .produto-01+.produto-01 {
+    margin-top: 1em
+  }
+}
+
 .grid-checkout {
-  margin-left: 20%;
-  margin-right: 20%;
-  margin-top: 3%;
+  margin-left  : 20%;
+  margin-right : 20%;
+  margin-top   : 3%;
   margin-bottom: 5%;
 }
 
 .card-carrinho {
-  display: flex;
-  flex-direction: row;
+  display        : flex;
+  flex-direction : row;
   justify-content: space-around;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: center;
+  margin-left    : 10%;
+  margin-right   : 10%;
+  text-align     : center;
 }
 
 .carrinho-meuCarrinho {
-  display: flex;
-  margin-top: 5%;
+  display        : flex;
+  margin-top     : 5%;
   justify-content: center;
 }
 
 .main-titulo {
-  text-align: center;
-  font-weight: lighter;
-  font-size: 54pt;
+  text-align    : center;
+  font-weight   : lighter;
+  font-size     : 54pt;
   padding-bottom: 5%;
 }
 
 .seu-pedido {
-  padding-top: 10%;
+  padding-top   : 10%;
   padding-bottom: 10%;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+  font-family   : -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  text-align: center;
+  text-align : center;
   font-weight: lighter;
-  font-size: 34pt;
+  font-size  : 34pt;
 }
 
 .card-produto {
-  display: flex;
-  flex-direction: row;
+  display        : flex;
+  flex-direction : row;
   justify-content: space-around;
-  margin-left: 10%;
-  margin-right: 10%;
-  text-align: justify;
+  margin-left    : 10%;
+  margin-right   : 10%;
+  text-align     : justify;
 }
