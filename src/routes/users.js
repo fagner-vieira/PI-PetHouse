@@ -9,6 +9,7 @@ const AutenticacaoUsers = require("../middlewares/validateRegisterMiddleware");
 const AutenticacaoAdmin = require("../middlewares/validateRegisterMiddlewareAdmin");
 const cadastroController = require("../controllers/cadastroController");
 const cadastroAdminController = require("../controllers/cadastroAdminController");
+const { getProdutos } = require("../controllers/produtosController");
 const produtosController = require("../controllers/crudProdutosController");
 
 router.use(express.json());
