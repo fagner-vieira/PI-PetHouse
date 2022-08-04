@@ -7,7 +7,7 @@ const produtosController = {
     produtosSchema.findAll()
       .then(function(produtosReturn) {
         console.log(produtosReturn);
-        return res.render('/produtoInterna', {produtos: produtosReturn})
+        return res.render("pages/produtoInterna", {produtos: produtosReturn})
         
       })
       .catch((error) => console.log(error))
