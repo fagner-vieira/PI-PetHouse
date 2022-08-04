@@ -1,82 +1,68 @@
 <%- include("../partials/header") %>
 
-  <main>
+<body onload="carrinho()">
+  <div class="row row-carrinho" action="/painelUsuario/dadosCliente" method="GET">
+     
+      <div class="col-md-4 order-md-2 mb-4 cesta-produtos">
+          <h4 class="d-flex justify-content-between align-items-center mb-3">
+            
+              <h4 class="mb-3">Meu Carrinho</h4>
+          </h4>
 
-    <h1 class="main-titulo">Meu Carrinho</h1>
+          
+          <table id="tabela" class="table">
+              <thead>
+                  <tr class="tr-carrinho">
+                      <th>Produto</th>
+                      <th>Preço</th>
+                      <th>Quantidade</th>
+                      <th></th>
+                      <th>Total</th>
+                  </tr>
+              </thead>
 
+              <tbody id="infosProdutos">
 
-    <div class="card-carrinho">
-      <div class="card" style="width: 18rem;">
-        <img src="./imagens/racao-meat.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Ração de Carne</h5>
-          <p class="card-text">R$ 79,90</p>
-          <button type="button" class="btn btn-danger">Remover</button>
+              </tbody>
 
-        </div>
+          </table>
+
+          <div class="divTotal">
+              <h5>Total da compra: </h5>
+              <h5 class="totalGeralCarrinho"> </h5>
+          </div>
+
+          <div>
+              <button class="limpaCarrinho btn btn-primary btn-lg btn-block">
+                  Esvaziar Carrinho
+              </button>
+          </div>
+
+        
+
+              --total a pagar--
+              <li class="list-group-item d-flex justify-content-between">
+                  <h6 class="my-0">TOTAL (BRL)</h6>
+                  <strong>R$20</strong>
+              </li>
+          </ul> -->
       </div>
 
-      <div class="card" style="width: 18rem;">
-        <img src="./imagens/racao-mix.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Ração Mista</h5>
-          <p class="card-text">R$ 79,90</p>
-          <button type="button" class="btn btn-danger">Remover</button>
-        </div>
+     
+       
+          <hr class="mb-4">
+          <form >
+              <button id="finalizarCompra" class="btn btn-primary btn-lg btn-block" type="submit">
+                  <a href="/finalizado" style="color: white; text-decoration: none"> Finalizar </a>
+              </button>
+          </form>
+      </hr>
+
+
       </div>
 
-      <div class="card" style="width: 18rem;">
-        <img src="./imagens/racao-veggie.png" class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title">Ração Vegana</h5>
-          <p class="card-text">R$ 79,90</p>
-          <button type="button" class="btn btn-danger">Remover</button>
-        </div>
-      </div>
-    </div>
+  </div>
+</body>
 
-    <div class="carrinho-meuCarrinho">
-      <div class="col-md-5 col-lg-4 order-md-last">
-        <h4 class="d-flex justify-content-between align-items-center mb-3">
-          <span class="text-primary">Seu Carrinho</span>
-          <span class="badge bg-primary rounded-pill">3</span> <!-- aplicar regra Javascript para soma automática -->
-        </h4>
-        <ul class="list-group mb-3">
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Nome do Produto</h6>
-              <small class="text-muted">Descrição</small>
-            </div>
-            <span class="text-muted">R$ 79,90</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Nome do Produto</h6>
-              <small class="text-muted">Descrição</small>
-            </div>
-            <span class="text-muted">R$ 79,90</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between lh-sm">
-            <div>
-              <h6 class="my-0">Nome do Produto</h6>
-              <small class="text-muted">Descrição</small>
-            </div>
-            <span class="text-muted">R$ 79,90</span>
-          </li>
-          <li class="list-group-item d-flex justify-content-between">
-            <span>Total (BRL)</span>
-            <strong>R$ 239,70</strong> <!-- aplicar regra Javascript para soma automática -->
-          </li>
-        </ul>
-      </div>
-    </div>
-
-
-    <div class="d-grid gap-2 col-6 mx-auto">
-      <button type="button" class="btn btn-success">Finalizar pedido</button>
-      <button type="button" class="btn btn-danger">Cancelar</button>
-    </div>
-
-  </main>
-
+<script type="text/javascript" src="../../js/carrinho.js"></script>
   <%- include("../partials/footer") %>
