@@ -19,7 +19,7 @@ const produtosController = {
     const { id, preco, descricao } = req.body;
 
     const newProdutos = await Produtos.update(
-      { id, preco, descricao, imagem },
+      { id, preco, descricao },
       {
         where: {
           id: req.body.id,

@@ -23,9 +23,9 @@ router.get("/checkout", AutenticacaoUsers, (req, res) => {
 router.get("/meuCarrinho", AutenticacaoUsers, (req, res) => {
   res.render("pages/meuCarrinho");
 });
-// router.get("/produtoInterna", getProdutos, (req, res) => {
-//   res.render("/views/pages/produtoInterna");
-// });
+router.get("/produtoInterna", getProdutos, (req, res) => {
+  res.render("/views/pages/produtoInterna");
+});
 router.get("/minhaConta", AutenticacaoUsers, (req, res) => {
   res.render("pages/minhaConta");
 });
