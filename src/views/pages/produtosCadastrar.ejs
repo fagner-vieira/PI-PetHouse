@@ -14,26 +14,26 @@
                     <h3><u>Cadastrar novo item</u></h3>
                 </div>
 
-                <form action="/admin/servicos/acaoCadastrar" enctype="multipart/form-data" method="POST"
-                    class="cadastrar">
+                <form action="/produtosCadastrar" enctype="multipart/form-data" method="post" class="cadastrar">
                     <div class="row justify-content-md-center">
 
                         <div class=" col-6 mb-3">
                             <div class="form-floating col-12 mb-3">
-                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Nome">
-                                <label for="floatingInputGroup1">Nome</label>
+                                <input name="nome" type="text" class="form-control" id="nome" placeholder="Nome">
+                                <label for="nome">Nome</label>
                             </div>
                             <div class="form-floating col-12 mb-3">
-                                <input type="text" class="form-control" id="floatingInputGroup1" placeholder="Preço">
-                                <label for="floatingInputGroup1">Preço</label>
+                                <input name="preco" type="text" class="form-control" id="preco" placeholder="Preço">
+                                <label for="preco">Preço</label>
                             </div>
                             <div class="form-floating col-12 mb-3">
-                                <textarea class="form-control" placeholder="Descrição" id="floatingTextarea"></textarea>
+                                <textarea name="descricao" class="form-control" placeholder="Descrição"
+                                    id="floatingTextarea"></textarea>
                                 <label for="floatingTextarea">Descrição</label>
                             </div>
                             <div class="form-floating col-12">
                                 <label class="form-label ml-0 pl-0">Foto do Produto:</label><br><br>
-                                <input type="file" name="imagemProduto" />
+                                <input type="file" name="imagem" />
                             </div>
 
                             <div class="form-floating text-center mt-3">
@@ -50,24 +50,19 @@
                         <h3><u>Alterar item</u></h3>
                     </div>
 
-                    <form action="/admin/servicos/acaoAlterar" enctype="multipart/form-data" method="PATCH"
-                        class="alterar">
+                    <form id="formUpdate" class="alterar">
                         <div class="row justify-content-md-center">
 
                             <div class=" col-6 mb-3">
                                 <div class="form-floating col-12 mb-3">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Produto:</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <input name="id" type="text" class="form-control" id="Id_Produto"
+                                        placeholder="Digite aqui o Id do produto">
+                                    <label for="Id_Produto">Id do produto</label>
                                 </div>
 
                                 <div class="form-floating col-12 mb-3">
-                                    <input type="text" class="form-control" id="floatingInputGroup1"
-                                        placeholder="Preço">
-                                    <label for="floatingInputGroup1">Preço</label>
+                                    <input type="text" class="form-control" id="updatePreco" placeholder="Preço">
+                                    <label for="updatePreco">Preço</label>
                                 </div>
                                 <div class="form-floating col-12 mb-3">
                                     <textarea class="form-control" placeholder="Descrição"
@@ -76,6 +71,8 @@
                                 </div>
 
                                 <div class="form-floating text-center mt-3">
+                                    <p id="ProductMessageUpdate" style="color:Red; width:100px;"></p>
+
                                     <button class="btn btn-primary" type="submit">Alterar</button>
                                 </div>
                             </div>
@@ -90,28 +87,94 @@
                         <h3><u>Excluir item</u></h3>
                     </div>
 
-                    <form action="/admin/servicos/acaoDelete" enctype="multipart/form-data" method="DELETE" class="deletar">
+                    <form class="deletar" id="deleteProductForm">
                         <div class="row justify-content-md-center">
 
                             <div class=" col-6 mb-3">
                                 <div class="form-floating col-12 mb-3">
-                                    <select class="form-select" aria-label="Default select example">
-                                        <option selected>Produto:</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
+                                    <input value="7" name="id" type="text" class="form-control" id="deleteProduct"
+                                        placeholder="Digite aqui o Id do produto">
+                                    <label for="deleteProduct">Id do produto</label>
                                 </div>
-
-                                <p>Este produto será excluido permanentemente!</p>
-                                <div class="form-floating text-center mt-3">
-                                    <button class="btn btn-primary" type="submit">Deletar</button>
-                                </div>
+                                <% if (typeof msg !="undefined" ) { %>
+                                    <p>
+                                        <label style="color:Red">
+                                            <%= msg %>
+                                        </label>
+                                    </p>
+                                    <%}%>
+                                        <p id="deleteProductMessage" style="color:Red; width:100px;"></p>
+                                        <p>Este produto será excluido permanentemente!</p>
+                                        <div class="form-floating text-center mt-3">
+                                            <button id="deleteProductButton" class="btn btn-primary"
+                                                type="submit">Deletar</button>
+                                        </div>
                             </div>
                         </div>
                     </form>
                 </div>
-            </div> 
+            </div>
         </div>
     </div>
+    <script>
+
+
+
+        const inputId = document.getElementById("Id_Produto")
+        const inputPreco = document.getElementById("updatePreco")
+        const inputDescription = document.getElementById("floatingTextarea")
+        const messageUpdate = document.getElementById("ProductMessageUpdate")
+        const formUpdate = document.getElementById("formUpdate")
+
+        formUpdate.addEventListener("submit", submitUpdateProduct)
+        function submitUpdateProduct(event) {
+            event.preventDefault()
+            const valueId = inputId.value
+            const valuePreco = inputPreco.value
+            const valueDescription = inputDescription.value
+            fetch("http://localhost:3000/updateProduct", {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'put',
+                body: JSON.stringify({ id: valueId, preco: valuePreco, description: valueDescription })
+            })
+                .then(result => {
+                    result.json()
+                })
+                .then((data) => message.innerText = `${data}`).catch((erro) => {
+                    console.log(erro)
+                })
+        }
+
+
+
+
+
+
+
+
+
+
+        const input = document.getElementById("deleteProduct")
+        const message = document.getElementById("deleteProductMessage")
+        const form = document.getElementById("deleteProductForm")
+
+        form.addEventListener("submit", submitDeleteProduct)
+        function submitDeleteProduct(event) {
+            event.preventDefault()
+            const value = input.value
+            console.log('adSyasrA6agusYAYGSis')
+            fetch("http://localhost:3000/deleteProduct", {
+                headers: { 'Content-Type': 'application/json' },
+                method: 'delete',
+                body: JSON.stringify({ id: value })
+            })
+                .then(result => {
+                    result.json()
+                })
+                .then((data) => message.innerText = `${data}`).catch((erro) => {
+                    console.log(erro)
+                })
+        }
+
+    </script>
     <%- include('../partials/footer') %>

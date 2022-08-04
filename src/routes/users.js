@@ -1,9 +1,15 @@
 var express = require("express");
+const multer = require("multer");
+const { storage } = require("../../multerConfig");
+
+const upload = multer({ storage: storage });
+
 var router = express.Router();
 const AutenticacaoUsers = require("../middlewares/validateRegisterMiddleware");
 const AutenticacaoAdmin = require("../middlewares/validateRegisterMiddlewareAdmin");
 const cadastroController = require("../controllers/cadastroController");
 const cadastroAdminController = require("../controllers/cadastroAdminController");
+const produtosController = require("../controllers/crudProdutosController");
 
 router.use(express.json());
 router.get("/", (req, res) => {
@@ -35,11 +41,21 @@ router.get("/produtosCadastrar", (req, res) => {
 });
 
 router.post("/login", cadastroController.authlogin);
+router.post("/cadastro", cadastroController.create);
 router.get("/login", cadastroController.login);
 // // router.post("/admin", validation, createUser.index);
 router.get("/");
 
 router.post("/cadastroAdmin", cadastroAdminController.create);
 router.post("/loginAdmin", cadastroAdminController.authlogin);
+
+router.post(
+  "/produtosCadastrar",
+  upload.single("imagem"),
+  produtosController.create
+);
+router.get("/listProdutos", produtosController.list);
+router.put("/updateProduct", produtosController.update);
+router.delete("/deleteProduct", produtosController.delete);
 
 module.exports = router;

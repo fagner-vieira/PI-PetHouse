@@ -14,6 +14,7 @@ const bodyParser = require("body-parser");
 const produtosRoutes = require("./routes/produtosRoutes");
 const pedidoRoutes = require("./routes/pedidoRoutes");
 const enderecosRoutes = require("./routes/enderecosRoutes");
+const methodOverride = require("method-override");
 // fim banco de dados - processo de mvc - //
 
 // view engine setup
@@ -26,10 +27,12 @@ app.use(express.urlencoded({ extended: false }));
 app.use(cookieParser());
 app.use(express.static(path.join(__dirname, "../public")));
 app.use(session({ secret: "senha", resave: false, saveUninitialized: false }));
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(methodOverride("_method"));
 
 // inicio banco de dados - processo de mvc - //
 
-app.use('/produtos', produtosRoutes);
+// app.use("/produtos", produtosRoutes);
 app.use(pedidoRoutes);
 app.use(enderecosRoutes);
 
