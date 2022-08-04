@@ -47,8 +47,8 @@
             <p>Valor R$ 79,90</p>
             <p class="card-text">Ração vegana para animais, feita a base de batata e spinafre.</p>
             <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-primary" type="button">Comprar</button>
-              <button class="btn btn-primary" type="button">Adicionar ao Carrinho</button>
+              <button onclick="acaoModal()" class="botao-produto-interno" type="button">Comprar</button>
+              <button onclick="acaoModal()" class="botao-produto-interno" type="button">Adicionar ao Carrinho</button>
 
             </div>
           </div>
@@ -64,8 +64,8 @@
             <p>Valor R$ 79,90</p>
             <p class="card-text">Ração Mista para animais, feita a base de frango e carne.</p>
             <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-primary" type="button">Comprar</button>
-              <button class="btn btn-primary" type="button">Adicionar ao Carrinho</button>
+              <button onclick="acaoModal()" class="botao-produto-interno">Comprar</button>
+              <button onclick="acaoModal()" class="botao-produto-interno">Adicionar ao Carrinho</button>
 
             </div>
           </div>
@@ -81,14 +81,16 @@
             <p>Valor R$ 79,90</p>
             <p class="card-text">Ração de Carne para animais, feita a base carne de cordeiro.</p>
             <div class="d-grid gap-2 col-6 mx-auto">
-              <button class="btn btn-primary" type="button">Comprar</button>
-              <button class="btn btn-primary" type="button">Adicionar ao Carrinho</button>
+              <button onclick="acaoModal()" class="botao-produto-interno">Comprar</button>
+              <button onclick="acaoModal()" class="botao-produto-interno">Adicionar ao Carrinho</button>
 
             </div>
           </div>
         </div>
       </div>
     </div>
+
+    <script type="text/javascript" src="../../js/modalCarrinho.js"></script>
   </main>
 
   <%- include("../partials/footer") %>
