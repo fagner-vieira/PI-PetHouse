@@ -29,6 +29,7 @@ main {
   justify-content: space-around;
   box-sizing: border-box;
   font-weight: lighter;
+  column-gap: 4em;
 }
 
 .nossosProdutos {
@@ -47,7 +48,6 @@ main {
 }
 
 .produto-01 {
-  width: 450px;
   text-align: center;
 }
 
