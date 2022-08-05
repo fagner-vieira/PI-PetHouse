@@ -6,15 +6,21 @@
 
 
     <div class="card-produto">
-      <% for (produto of produtos) { %>
-      <div class="card" style="width: 18rem;">
-        <img src=<%= produtos.image%> class="card-img-top" alt="...">
-        <div class="card-body">
-          <h5 class="card-title"><%= produto.nome%></h5>
-          <p class="card-text"><%= produto.descricao%></p>
-          <p class="card-text"><%= produto.preco%></p>
-    </div>
-    <% } %>
+      <% for (produto of produtos.length) { %>
+        <div class="card" style="width: 18rem;">
+          <img src=<%=produtos.image%> class="card-img-top" alt="...">
+          <div class="card-body">
+            <h5 class="card-title">
+              <%= produto.nome%>
+            </h5>
+            <p class="card-text">
+              <%= produto.descricao%>
+            </p>
+            <p class="card-text">
+              <%= produto.preco%>
+            </p>
+          </div>
+          <% } %>
 
 
 
